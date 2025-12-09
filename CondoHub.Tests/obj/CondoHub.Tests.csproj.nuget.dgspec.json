@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Tests\\CondoHub.Tests.csproj": {}
+    "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Tests\\CondoHub.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Tests\\CondoHub.Tests.csproj": {
+    "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Tests\\CondoHub.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Tests\\CondoHub.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Tests\\CondoHub.Tests.csproj",
         "projectName": "CondoHub.Tests",
-        "projectPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Tests\\CondoHub.Tests.csproj",
+        "projectPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Tests\\CondoHub.Tests.csproj",
         "packagesPath": "C:\\Users\\ericb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Tests\\obj\\",
+        "outputPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

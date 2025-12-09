@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Security\\CondoHub.Security.csproj": {}
+    "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Security\\CondoHub.Security.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Security\\CondoHub.Security.csproj": {
+    "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Security\\CondoHub.Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Security\\CondoHub.Security.csproj",
+        "projectUniqueName": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Security\\CondoHub.Security.csproj",
         "projectName": "CondoHub.Security",
-        "projectPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Security\\CondoHub.Security.csproj",
+        "projectPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Security\\CondoHub.Security.csproj",
         "packagesPath": "C:\\Users\\ericb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.Security\\obj\\",
+        "outputPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Security\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

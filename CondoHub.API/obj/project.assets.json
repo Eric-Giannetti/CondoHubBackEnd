@@ -541,11 +541,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.API\\CondoHub.API.csproj",
+      "projectUniqueName": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\CondoHub.API.csproj",
       "projectName": "CondoHub.API",
-      "projectPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.API\\CondoHub.API.csproj",
+      "projectPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\CondoHub.API.csproj",
       "packagesPath": "C:\\Users\\ericb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.API\\obj\\",
+      "outputPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

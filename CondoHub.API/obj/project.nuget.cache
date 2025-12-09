@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HcVgnXOWc3I=",
+  "dgSpecHash": "W/I8wVX21Mk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHub\\CondoHub.API\\CondoHub.API.csproj",
+  "projectFilePath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\CondoHub.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ericb\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\ericb\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",

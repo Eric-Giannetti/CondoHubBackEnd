@@ -1,0 +1,14 @@
+# Ignore IDE and build artifacts
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+
+# Logs and temp
+*.log

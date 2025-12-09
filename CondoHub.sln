@@ -1,9 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
+VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondoHub.API", "CondoHub.API\CondoHub.API.csproj", "{64903C67-25A0-4B9A-B3EE-B41549A35B8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondoHub.DataBase", "CondoHub.DataBase\CondoHub.DataBase.csproj", "{12FE1177-AA90-4C22-840B-47CE9AADD983}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondoHub.Domain", "CondoHub.Domain\CondoHub.Domain.csproj", "{F355E697-81FB-4F8C-BD5F-870216BF3D2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondoHub.Infra", "CondoHub.Infra\CondoHub.Infra.csproj", "{6FC0F11C-EA12-42B1-9614-7A419A227169}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondoHub.Security", "CondoHub.Security\CondoHub.Security.csproj", "{9D4346B1-DB39-4A44-960C-307A731C8219}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondoHub.Services", "CondoHub.Services\CondoHub.Services.csproj", "{9765FACD-29CA-4E0C-A801-782819E539F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondoHub.Tests", "CondoHub.Tests\CondoHub.Tests.csproj", "{9E729F44-E68A-4E3F-AAB2-2D6F988E6067}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +27,30 @@ Global
 		{64903C67-25A0-4B9A-B3EE-B41549A35B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64903C67-25A0-4B9A-B3EE-B41549A35B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64903C67-25A0-4B9A-B3EE-B41549A35B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FE1177-AA90-4C22-840B-47CE9AADD983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FE1177-AA90-4C22-840B-47CE9AADD983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FE1177-AA90-4C22-840B-47CE9AADD983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FE1177-AA90-4C22-840B-47CE9AADD983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F355E697-81FB-4F8C-BD5F-870216BF3D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F355E697-81FB-4F8C-BD5F-870216BF3D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F355E697-81FB-4F8C-BD5F-870216BF3D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F355E697-81FB-4F8C-BD5F-870216BF3D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC0F11C-EA12-42B1-9614-7A419A227169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC0F11C-EA12-42B1-9614-7A419A227169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC0F11C-EA12-42B1-9614-7A419A227169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC0F11C-EA12-42B1-9614-7A419A227169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4346B1-DB39-4A44-960C-307A731C8219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4346B1-DB39-4A44-960C-307A731C8219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4346B1-DB39-4A44-960C-307A731C8219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4346B1-DB39-4A44-960C-307A731C8219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9765FACD-29CA-4E0C-A801-782819E539F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9765FACD-29CA-4E0C-A801-782819E539F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9765FACD-29CA-4E0C-A801-782819E539F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9765FACD-29CA-4E0C-A801-782819E539F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E729F44-E68A-4E3F-AAB2-2D6F988E6067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E729F44-E68A-4E3F-AAB2-2D6F988E6067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E729F44-E68A-4E3F-AAB2-2D6F988E6067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E729F44-E68A-4E3F-AAB2-2D6F988E6067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DesignPatterns\" />
-    <Folder Include="Context\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
