@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F355E697-81FB-4F8C-BD5F-870216BF3D2E}|CondoHub.Domain\\CondoHub.Domain.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.domain\\services\\iusercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F355E697-81FB-4F8C-BD5F-870216BF3D2E}|CondoHub.Domain\\CondoHub.Domain.csproj|solutionrelative:condohub.domain\\services\\iusercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\configs\\connectionsconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\configs\\connectionsconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\configs\\usecasesconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\configs\\usecasesconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\configs\\controllersconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\configs\\controllersconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\services\\usercontextmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\services\\usercontextmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12FE1177-AA90-4C22-840B-47CE9AADD983}|CondoHub.DataBase\\CondoHub.DataBase.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.database\\context\\condohubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12FE1177-AA90-4C22-840B-47CE9AADD983}|CondoHub.DataBase\\CondoHub.DataBase.csproj|solutionrelative:condohub.database\\context\\condohubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\attributes\\isadminattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\attributes\\isadminattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\condohub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\condohub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9765FACD-29CA-4E0C-A801-782819E539F7}|CondoHub.Services\\CondoHub.Services.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.services\\context\\usercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9765FACD-29CA-4E0C-A801-782819E539F7}|CondoHub.Services\\CondoHub.Services.csproj|solutionrelative:condohub.services\\context\\usercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F355E697-81FB-4F8C-BD5F-870216BF3D2E}|CondoHub.Domain\\CondoHub.Domain.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.domain\\util\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F355E697-81FB-4F8C-BD5F-870216BF3D2E}|CondoHub.Domain\\CondoHub.Domain.csproj|solutionrelative:condohub.domain\\util\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E729F44-E68A-4E3F-AAB2-2D6F988E6067}|CondoHub.Tests\\CondoHub.Tests.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{12FE1177-AA90-4C22-840B-47CE9AADD983}|CondoHub.DataBase\\CondoHub.DataBase.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.database\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12FE1177-AA90-4C22-840B-47CE9AADD983}|CondoHub.DataBase\\CondoHub.DataBase.csproj|solutionrelative:condohub.database\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|c:\\users\\ericb\\documents\\projetos\\temp\\condohub\\condohubbackend\\condohub.api\\condohub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{64903C67-25A0-4B9A-B3EE-B41549A35B8E}|CondoHub.API\\CondoHub.API.csproj|solutionrelative:condohub.api\\condohub.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -67,6 +99,123 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "IUserContextService.cs",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Domain\\Services\\IUserContextService.cs",
+              "RelativeDocumentMoniker": "CondoHub.Domain\\Services\\IUserContextService.cs",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Domain\\Services\\IUserContextService.cs*",
+              "RelativeToolTip": "CondoHub.Domain\\Services\\IUserContextService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T03:12:07.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\appsettings.json",
+              "RelativeDocumentMoniker": "CondoHub.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\appsettings.json",
+              "RelativeToolTip": "CondoHub.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-09T03:07:18.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserContextMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Services\\UserContextMiddleware.cs",
+              "RelativeDocumentMoniker": "CondoHub.API\\Services\\UserContextMiddleware.cs",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Services\\UserContextMiddleware.cs",
+              "RelativeToolTip": "CondoHub.API\\Services\\UserContextMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:58:18.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ControllersConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Configs\\ControllersConfiguration.cs",
+              "RelativeDocumentMoniker": "CondoHub.API\\Configs\\ControllersConfiguration.cs",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Configs\\ControllersConfiguration.cs",
+              "RelativeToolTip": "CondoHub.API\\Configs\\ControllersConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:55:56.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConnectionsConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Configs\\ConnectionsConfiguration.cs",
+              "RelativeDocumentMoniker": "CondoHub.API\\Configs\\ConnectionsConfiguration.cs",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Configs\\ConnectionsConfiguration.cs",
+              "RelativeToolTip": "CondoHub.API\\Configs\\ConnectionsConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:55:43.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UseCasesConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Configs\\UseCasesConfiguration.cs",
+              "RelativeDocumentMoniker": "CondoHub.API\\Configs\\UseCasesConfiguration.cs",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Configs\\UseCasesConfiguration.cs",
+              "RelativeToolTip": "CondoHub.API\\Configs\\UseCasesConfiguration.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAUwBQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:56:07.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Program.cs",
+              "RelativeDocumentMoniker": "CondoHub.API\\Program.cs",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Program.cs",
+              "RelativeToolTip": "CondoHub.API\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:44:38.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CondoHubContext.cs",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.DataBase\\Context\\CondoHubContext.cs",
+              "RelativeDocumentMoniker": "CondoHub.DataBase\\Context\\CondoHubContext.cs",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.DataBase\\Context\\CondoHubContext.cs",
+              "RelativeToolTip": "CondoHub.DataBase\\Context\\CondoHubContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T03:02:58.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IsAdminAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Attributes\\IsAdminAttribute.cs",
+              "RelativeDocumentMoniker": "CondoHub.API\\Attributes\\IsAdminAttribute.cs",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Attributes\\IsAdminAttribute.cs",
+              "RelativeToolTip": "CondoHub.API\\Attributes\\IsAdminAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T02:54:50.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "UserContextService.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Services\\Context\\UserContextService.cs",
               "RelativeDocumentMoniker": "CondoHub.Services\\Context\\UserContextService.cs",
@@ -79,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "CondoHub.Security",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Security\\CondoHub.Security.csproj",
               "RelativeDocumentMoniker": "CondoHub.Security\\CondoHub.Security.csproj",
@@ -92,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "Result.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Domain\\Util\\Result.cs",
               "RelativeDocumentMoniker": "CondoHub.Domain\\Util\\Result.cs",
@@ -105,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Domain\\Util\\PagedResult.cs",
               "RelativeDocumentMoniker": "CondoHub.Domain\\Util\\PagedResult.cs",
@@ -118,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Domain\\Util\\Entity.cs",
               "RelativeDocumentMoniker": "CondoHub.Domain\\Util\\Entity.cs",
@@ -131,20 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Program.cs",
-              "RelativeDocumentMoniker": "CondoHub.API\\Program.cs",
-              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\Program.cs",
-              "RelativeToolTip": "CondoHub.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T02:44:38.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Tests\\UnitTest1.cs",
               "RelativeDocumentMoniker": "CondoHub.Tests\\UnitTest1.cs",
@@ -157,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Services\\Class1.cs",
               "RelativeDocumentMoniker": "CondoHub.Services\\Class1.cs",
@@ -170,7 +306,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
+              "Title": "CondoHub.API.csproj",
+              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\CondoHub.API.csproj",
+              "RelativeDocumentMoniker": "CondoHub.API\\CondoHub.API.csproj",
+              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\CondoHub.API.csproj*",
+              "RelativeToolTip": "CondoHub.API\\CondoHub.API.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-09T01:31:16.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Security\\Class1.cs",
               "RelativeDocumentMoniker": "CondoHub.Security\\Class1.cs",
@@ -183,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Infra\\Class1.cs",
               "RelativeDocumentMoniker": "CondoHub.Infra\\Class1.cs",
@@ -196,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Domain\\Class1.cs",
               "RelativeDocumentMoniker": "CondoHub.Domain\\Class1.cs",
@@ -209,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.DataBase\\Class1.cs",
               "RelativeDocumentMoniker": "CondoHub.DataBase\\Class1.cs",
@@ -218,19 +367,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-09T02:42:23.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CondoHub.API.csproj",
-              "DocumentMoniker": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\CondoHub.API.csproj",
-              "RelativeDocumentMoniker": "CondoHub.API\\CondoHub.API.csproj",
-              "ToolTip": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.API\\CondoHub.API.csproj",
-              "RelativeToolTip": "CondoHub.API\\CondoHub.API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-09T01:31:16.083Z",
               "EditorCaption": ""
             }
           ]

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CondoHub.DataBase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+201842b6817c6ef3107c2a6b2d2d548b0577073d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db62849f08f233ea4173f839f4b39209662e9dc3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CondoHub.DataBase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CondoHub.DataBase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

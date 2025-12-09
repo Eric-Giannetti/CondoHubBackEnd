@@ -10,7 +10,6 @@
     <Folder Include="Dto\" />
     <Folder Include="Entity\" />
     <Folder Include="Enum\" />
-    <Folder Include="Services\" />
     <Folder Include="Repository\" />
   </ItemGroup>
 

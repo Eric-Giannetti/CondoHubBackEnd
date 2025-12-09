@@ -12,3 +12,4 @@ obj/
 
 # Logs and temp
 *.log
+CondoHub.API/appsettings.json

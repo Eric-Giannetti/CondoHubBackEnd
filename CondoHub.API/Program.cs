@@ -1,4 +1,11 @@
+using CondoHub.API.Configs;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services
+    .AddAppConnections(builder.Configuration)
+    .AddUseCases()
+    .AddAuthenticationJwt(builder.Configuration);
 
 // Add services to the container.
 
@@ -8,6 +15,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseCors(policy =>
+    policy.AllowAnyHeader()
+          .AllowAnyMethod()
+          .AllowAnyOrigin());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

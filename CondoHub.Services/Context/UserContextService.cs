@@ -1,12 +1,14 @@
-﻿using System;
+﻿using CondoHub.Domain.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CondoHub.Services.Context
+namespace CondoHub.Services.Context;
+
+public class UserContextService : IUserContextService
 {
-    internal class UserContextService
-    {
-    }
+    public long UserId { get; set; }
+    public bool IsAdmin { get; set; }
 }
