@@ -1,4 +1,5 @@
 using CondoHub.API.Configs;
+using CondoHub.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +31,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<UserContextMiddleware>();
 
 app.MapControllers();
 

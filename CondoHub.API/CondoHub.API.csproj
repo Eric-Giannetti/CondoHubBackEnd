@@ -20,11 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CondoHub.DataBase\CondoHub.DataBase.csproj" />
+    <ProjectReference Include="..\CondoHub.Domain\CondoHub.Domain.csproj" />
+    <ProjectReference Include="..\CondoHub.Infra\CondoHub.Infra.csproj" />
+    <ProjectReference Include="..\CondoHub.Security\CondoHub.Security.csproj" />
+    <ProjectReference Include="..\CondoHub.Services\CondoHub.Services.csproj" />
   </ItemGroup>
 
 </Project>
