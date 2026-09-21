@@ -12,6 +12,8 @@ namespace CondoHub.Services.Services;
 
 public class LoginService : ILoginService
 {
+    #region Construtores
+
     private readonly ILoginRepository _loginRepository;
     private readonly IUserContextService _userContextService;
     private readonly IConfiguration _configuration;
@@ -30,7 +32,10 @@ public class LoginService : ILoginService
         _userGroupService = userGroupService;
         _configuration = configuration;
         _userRepository = userRepository;
-    }
+    }    
+
+    #endregion
+
 
 
     public Result<LoginDTO> LoginUser(LoginCredentials credentials)

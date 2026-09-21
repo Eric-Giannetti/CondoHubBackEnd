@@ -27,8 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MongoDb\" />
-    <Folder Include="MySql\" />
+    <Folder Include="MySql\Context\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CondoHub.Domain\CondoHub.Domain.csproj" />
   </ItemGroup>
 
 </Project>

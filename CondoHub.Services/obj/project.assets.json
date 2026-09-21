@@ -712,6 +712,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "CondoHub.Domain": "1.0.0",
           "Dapper": "2.1.66",
           "Microsoft.AspNetCore.OpenApi": "8.0.22",
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.22",

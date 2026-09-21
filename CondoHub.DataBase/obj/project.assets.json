@@ -1177,6 +1177,16 @@
         "runtime": {
           "lib/net7.0/ZstdSharp.dll": {}
         }
+      },
+      "CondoHub.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/CondoHub.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CondoHub.Domain.dll": {}
+        }
       }
     }
   },
@@ -3055,10 +3065,16 @@
         "zstdsharp.port.0.7.3.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "CondoHub.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CondoHub.Domain/CondoHub.Domain.csproj",
+      "msbuildProject": "../CondoHub.Domain/CondoHub.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "CondoHub.Domain >= 1.0.0",
       "Dapper >= 2.1.66",
       "Microsoft.AspNetCore.OpenApi >= 8.0.22",
       "Microsoft.EntityFrameworkCore.Abstractions >= 8.0.22",
@@ -3104,7 +3120,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Domain\\CondoHub.Domain.csproj": {
+              "projectPath": "C:\\Users\\ericb\\Documents\\projetos\\temp\\CondoHub\\CondoHubBackEnd\\CondoHub.Domain\\CondoHub.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,4 +1,6 @@
-﻿using CondoHub.Domain.Services;
+﻿using CondoHub.DataBase.MongoDb.RepositoryMongo;
+using CondoHub.Domain.Interfaces.Repositorys;
+using CondoHub.Domain.Services;
 using CondoHub.Services.Context;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 
@@ -24,7 +26,7 @@ public static class UseCasesConfiguration
         #endregion
 
         #region Repositories
-
+        services.AddScoped<ICondominiumMongoRepository, CondominiumMongoRepository>();
         #endregion
 
         return services;

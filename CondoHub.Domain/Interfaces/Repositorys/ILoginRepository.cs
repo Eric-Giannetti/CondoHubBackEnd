@@ -6,4 +6,5 @@ namespace CondoHub.Domain.Interfaces.Repositorys;
 public interface ILoginRepository
 {
      User? GetUserByCredentials(LoginCredentials credentials);
+     UserData? GetUserDataById(long userId);
 }
