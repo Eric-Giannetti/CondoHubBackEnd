@@ -1,15 +1,57 @@
-# Ignore IDE and build artifacts
+# Visual Studio / VS Code
 .vs/
+.vscode/
 .idea/
+*.code-workspace
 *.user
-*.suo
 *.userosscache
+*.suo
 *.sln.docstates
+*.dbmdl
+*.bak
 
 # Build outputs
+[Dd]ebug/
+[Rr]elease/
 bin/
 obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+TestResults/
 
-# Logs and temp
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Core / appsettings
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+!appsettings.json
+
+# Secrets / local configuration
+secrets.json
+*.pfx
+*.pem
+*.key
+
+# Logs
 *.log
-CondoHub.API/appsettings.json
+
+# OS generated files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Misc
+*.cache
+*.tmp
+*.temp
+*.pid
+*.publish.xml
+*.orig

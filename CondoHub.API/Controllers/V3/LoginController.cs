@@ -32,17 +32,26 @@ public class LoginController : Controller
     
     [HttpPost("refresh-token")]
     [Authorize]
-    public IActionResult RefreshToken(TypeUserEnum loginDto)
+    public IActionResult RefreshToken([FromBody] TypeUserEnum loginDto)
     {
-        var user = new LoginDTO()
+        var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+            ?? User.FindFirst("sub")?.Value;
+
+        if (!long.TryParse(userIdClaim, out var userId) || userId <= 0)
+            return Unauthorized("Invalid user token.");
+
+        var user = new LoginDTO
         {
-            UserId = Convert.ToInt64(User.FindFirst("sub")?.Value ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value),
+            UserId = userId,
             TypeUser = new List<TypeUserEnum> { loginDto },
             FirstAccess = false
         };
+
         var result = _loginService.RefreshToken(user);
-        
-        
-        return Ok(new LoginDTO());
+
+        if (result.IsSuccess)
+            return Ok(result.Value);
+
+        return Unauthorized(result.Error);
     }
 }
