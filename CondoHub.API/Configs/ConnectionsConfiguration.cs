@@ -21,10 +21,15 @@ public static class ConnectionsConfiguration
         IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("CondoHubConnectionString");
-        
+        var mongoConnectionString = configuration.GetConnectionString("MongoDbConnectionString");
+
         services.AddDbContext<CondoHubContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
         services.AddSingleton<IDbConnectionFactory, DbConnectionFactory>();
         services.AddSingleton<MongoDbContext>();
+
+        services.AddHealthChecks()
+            .AddMySql(connectionString!)
+            .AddMongoDb(mongoConnectionString!);
 
         return services;
     }
