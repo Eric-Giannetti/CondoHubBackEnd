@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__CondoHubConnectionString: "Server=mysql;Database=condohubdb;Uid=root;Pwd=${MYSQL_ROOT_PASSWORD:-condohub123};Port=3306"
+      ConnectionStrings__MongoDbConnectionString: "mongodb://mongo:27017"
+      MongoDbDatabaseName: condohubdb
+      Jwt__Issuer: ${JWT_ISSUER:-condohub-issuer}
+      Jwt__Audience: ${JWT_AUDIENCE:-condohub-audience}
+      Jwt__SecretKey: ${JWT_SECRET_KEY:?set JWT_SECRET_KEY in .env}
+      Jwt__ExpirationInDays: "60"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      mongo:
+        condition: service_started
+    networks:
+      - condohub-network
+
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-condohub123}
+      MYSQL_DATABASE: condohubdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-condohub123}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - condohub-network
+
+  mongo:
+    image: mongo:7.0
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - condohub-network
+
+volumes:
+  mysql-data:
+  mongo-data:
+
+networks:
+  condohub-network:
+    driver: bridge
