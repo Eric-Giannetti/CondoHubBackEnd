@@ -1,4 +1,3 @@
-````markdown
 # 🏢 CondoHub
 
 **CondoHub** é uma plataforma ERP para **gestão condominial**, desenvolvida com foco em organização, escalabilidade, segurança e separação de responsabilidades.
@@ -58,7 +57,7 @@ flowchart TB
     TESTS --> API
     TESTS --> SERVICES
     TESTS --> DOMAIN
-````
+
 
 ### Responsabilidade de cada camada
 
