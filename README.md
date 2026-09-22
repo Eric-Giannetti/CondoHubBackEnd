@@ -57,7 +57,7 @@ flowchart TB
     TESTS --> API
     TESTS --> SERVICES
     TESTS --> DOMAIN
-
+```
 
 ### Responsabilidade de cada camada
 
