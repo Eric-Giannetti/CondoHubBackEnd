@@ -1,5 +1,7 @@
 using CondoHub.API.Configs;
 using CondoHub.API.Services;
+using CondoHub.Domain.Interfaces.Services;
+using CondoHub.Domain.Util;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+ResultLogger.Logger = app.Services.GetRequiredService<ILogService>();
 
 app.UseCors(policy =>
     policy.AllowAnyHeader()

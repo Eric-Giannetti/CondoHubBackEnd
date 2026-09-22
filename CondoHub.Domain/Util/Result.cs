@@ -4,8 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using CondoHub.Domain.Interfaces.Services;
+
 namespace CondoHub.Domain.Util;
 
+/// <summary>Static hook allowing Result/ResultList Failure factories to persist a log entry without depending on infrastructure.</summary>
+public static class ResultLogger
+{
+    public static ILogService? Logger { get; set; }
+
+    public static void LogFailure(string errorMessage, TypeErrorLogEnum errorType) =>
+        Logger?.RegisterLog(errorMessage, errorType);
+}
 
 public class Result<T>
 {
@@ -21,8 +31,16 @@ public class Result<T>
 
     public static Result<T> Success(T value) => new Result<T> { Value = value, IsSuccess = true, Error = string.Empty };
 
-    public static Result<T> Failure(string errorMessage) => new Result<T>
-    { IsSuccess = false, Error = errorMessage, Value = default! };
+    public static Result<T> Failure(string errorMessage, TypeErrorLogEnum errorType)
+    {
+        ResultLogger.LogFailure(errorMessage, errorType);
+        return new Result<T> { IsSuccess = false, Error = errorMessage, Value = default! };
+    }
+    public static Result<T> Failure(string errorMessage)
+    {
+        ResultLogger.LogFailure(errorMessage, default);
+        return new Result<T> { IsSuccess = false, Error = errorMessage, Value = default! };
+    }
 }
 
 public class ResultList<T>
@@ -52,8 +70,18 @@ public class ResultList<T>
     }
 
     public static ResultList<T> Success(List<T> value) => new ResultList<T> { Value = value, IsSuccess = true, Error = string.Empty };
-    public static ResultList<T> Failure(string errorMessage) => new ResultList<T>
-    { IsSuccess = false, Error = errorMessage, Value = new List<T>() };
+
+    public static ResultList<T> Failure(string errorMessage)
+    {
+        ResultLogger.LogFailure(errorMessage, default);
+        return new ResultList<T> { IsSuccess = false, Error = errorMessage, Value = new List<T>() };
+    }
+
+    public static ResultList<T> Failure(string errorMessage, TypeErrorLogEnum errorType)
+    {
+        ResultLogger.LogFailure(errorMessage, errorType);
+        return new ResultList<T> { IsSuccess = false, Error = errorMessage, Value = new List<T>() };
+    }
 }
 
 public class Result
@@ -68,5 +96,9 @@ public class Result
     }
 
     public static Result Success() => new Result { IsSuccess = true, Error = string.Empty };
-    public static Result Failure(string errorMessage) => new Result { IsSuccess = false, Error = errorMessage };
+    public static Result Failure(string errorMessage)
+    {
+        ResultLogger.LogFailure(errorMessage, default);
+        return new Result { IsSuccess = false, Error = errorMessage };
+    }
 }
