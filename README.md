@@ -1,3 +1,4 @@
+````markdown
 # 🏢 CondoHub
 
 **CondoHub** é uma plataforma ERP para **gestão condominial**, desenvolvida com foco em organização, escalabilidade, segurança e separação de responsabilidades.
@@ -20,41 +21,44 @@ A aplicação foi projetada como uma **API REST**, servindo como backend para fu
 
 O projeto tem como principais objetivos:
 
-* Centralizar informações do condomínio;
-* Automatizar processos administrativos;
-* Reduzir processos manuais e retrabalho;
-* Garantir controle de acesso baseado em perfil;
-* Facilitar a manutenção e evolução do código;
-* Permitir integração com diferentes fontes de dados;
-* Manter as regras de negócio independentes da infraestrutura.
+- Centralizar informações do condomínio;
+- Automatizar processos administrativos;
+- Reduzir processos manuais e retrabalho;
+- Garantir controle de acesso baseado em perfil;
+- Facilitar a manutenção e evolução do código;
+- Permitir integração com diferentes fontes de dados;
+- Manter as regras de negócio independentes da infraestrutura.
 
 ---
 
 # 🏗️ Arquitetura
 
-O CondoHub utiliza uma arquitetura baseada em **separação de responsabilidades**, organizada em projetos independentes:
+O CondoHub utiliza uma arquitetura baseada em **separação de responsabilidades**, buscando manter as regras de negócio desacopladas de detalhes de infraestrutura.
 
-```text
-CondoHub
-│
-├── CondoHub.API
-│   └── Controllers, Middlewares, Filters, HTTP
-│
-├── CondoHub.Domain
-│   └── Entities, Interfaces, Contracts, Results
-│
-├── CondoHub.Services
-│   └── Application Services e regras de negócio
-│
-├── CondoHub.DataBase
-│   └── Repositories, Connections e persistência
-│
-├── CondoHub.Security
-│   └── Autenticação, autorização e recursos de segurança
-│
-└── CondoHub.Tests
-    └── Testes automatizados
-```
+```mermaid
+flowchart TB
+
+    API["CondoHub.API<br/>Controllers • Middleware • Filters"]
+
+    SERVICES["CondoHub.Services<br/>Application Services<br/>Regras de negócio"]
+
+    DOMAIN["CondoHub.Domain<br/>Entities • Interfaces<br/>Contracts • Results"]
+
+    DATABASE["CondoHub.DataBase<br/>Repositories • Persistence<br/>Database Connections"]
+
+    SECURITY["CondoHub.Security<br/>Authentication • Authorization<br/>Security Helpers"]
+
+    TESTS["CondoHub.Tests<br/>Automated Tests"]
+
+    API --> SERVICES
+    API --> SECURITY
+    SERVICES --> DOMAIN
+    DATABASE --> DOMAIN
+    SECURITY --> DOMAIN
+    TESTS --> API
+    TESTS --> SERVICES
+    TESTS --> DOMAIN
+````
 
 ### Responsabilidade de cada camada
 
@@ -67,7 +71,38 @@ CondoHub
 | **CondoHub.API**      | Exposição dos endpoints REST e integração entre as camadas    |
 | **CondoHub.Tests**    | Testes automatizados                                          |
 
-Uma das principais decisões arquiteturais é manter as camadas de negócio dependentes de **abstrações**, evitando acoplamento direto com implementações de infraestrutura.
+### Dependências entre camadas
+
+A direção das dependências foi pensada para manter o **Domain independente da infraestrutura**:
+
+```mermaid
+flowchart LR
+
+    subgraph Presentation["Presentation"]
+        API["CondoHub.API"]
+    end
+
+    subgraph Application["Application"]
+        SERVICES["CondoHub.Services"]
+    end
+
+    subgraph Core["Core"]
+        DOMAIN["CondoHub.Domain"]
+    end
+
+    subgraph Infrastructure["Infrastructure"]
+        DB["CondoHub.DataBase"]
+        SECURITY["CondoHub.Security"]
+    end
+
+    API --> SERVICES
+    API --> SECURITY
+    SERVICES --> DOMAIN
+    DB --> DOMAIN
+    SECURITY --> DOMAIN
+```
+
+> **Princípio central:** as regras de negócio não devem depender diretamente de banco de dados, HTTP ou detalhes de infraestrutura.
 
 ---
 
@@ -239,14 +274,15 @@ As interfaces são divididas de acordo com suas responsabilidades, evitando cont
 
 As regras de negócio dependem de **abstrações**, e não de implementações concretas.
 
-```text
-Services
-   │
-   ▼
-Interfaces / Contracts
-   │
-   ▼
-Infrastructure
+```mermaid
+flowchart LR
+
+    SERVICES["Services"]
+    INTERFACES["Interfaces / Contracts"]
+    INFRA["Infrastructure"]
+
+    SERVICES --> INTERFACES
+    INFRA --> INTERFACES
 ```
 
 A composição das implementações concretas acontece na camada de entrada da aplicação.
@@ -373,31 +409,103 @@ Principais tecnologias e conceitos utilizados no projeto:
 
 # 🔄 Fluxo da aplicação
 
-De forma simplificada, uma requisição percorre a aplicação seguindo o fluxo:
+De forma simplificada, uma requisição percorre a aplicação através das diferentes camadas:
 
-```text
-Client
-  │
-  ▼
-API / Controller
-  │
-  ▼
-Middleware / Filters
-  │
-  ▼
-Services
-  │
-  ▼
-Domain Interfaces
-  │
-  ▼
-Repositories
-  │
-  ▼
-Database
+```mermaid
+flowchart LR
+
+    CLIENT["Client<br/>Web / Mobile / External API"]
+
+    REQUEST["HTTP Request"]
+
+    MIDDLEWARE["UserContextMiddleware<br/>Contexto do usuário"]
+
+    FILTER["Authorization Filters<br/>IsAdmin / IsUser / IsCondominiumManager"]
+
+    CONTROLLER["Controller<br/>API Endpoint"]
+
+    SERVICE["Service<br/>Regra de negócio"]
+
+    INTERFACE["Domain Interface<br/>Repository Contract"]
+
+    REPOSITORY["Repository<br/>MongoDB / MySQL"]
+
+    DATABASE["Database"]
+
+    RESULT["Result / Result<T><br/>Success / Failure"]
+
+    RESPONSE["HTTP Response"]
+
+    CLIENT --> REQUEST
+    REQUEST --> MIDDLEWARE
+    MIDDLEWARE --> FILTER
+    FILTER --> CONTROLLER
+    CONTROLLER --> SERVICE
+    SERVICE --> INTERFACE
+    INTERFACE --> REPOSITORY
+    REPOSITORY --> DATABASE
+
+    DATABASE --> REPOSITORY
+    REPOSITORY --> SERVICE
+    SERVICE --> RESULT
+    RESULT --> CONTROLLER
+    CONTROLLER --> RESPONSE
+    RESPONSE --> CLIENT
 ```
 
-Essa separação permite que cada camada tenha uma responsabilidade específica e reduz o acoplamento entre **HTTP, regras de negócio e infraestrutura**.
+### Exemplo do ciclo de uma requisição
+
+```mermaid
+sequenceDiagram
+
+    participant C as Client
+    participant M as Middleware
+    participant F as Authorization Filter
+    participant API as Controller
+    participant S as Service
+    participant R as Repository
+    participant DB as Database
+
+    C->>M: HTTP Request
+    M->>M: Popula IUserContextService
+    M->>F: Continua pipeline
+
+    F->>F: Valida permissões
+
+    F->>API: Authorized Request
+    API->>S: Executa operação
+
+    S->>R: Consulta / Persiste dados
+    R->>DB: Database Operation
+    DB-->>R: Data / Result
+
+    R-->>S: Repository Result
+    S-->>API: Result<T>
+    API-->>C: HTTP Response
+```
+
+### Visão simplificada
+
+```mermaid
+flowchart LR
+
+    CLIENT["🌐 Client"]
+    API["🚪 API"]
+    SECURITY["🔐 Security"]
+    SERVICES["⚙️ Services"]
+    DOMAIN["🧠 Domain"]
+    DATABASE["🗄️ DataBase"]
+
+    CLIENT --> API
+    API --> SECURITY
+    SECURITY --> SERVICES
+    SERVICES --> DOMAIN
+    DOMAIN --> DATABASE
+    DATABASE --> DOMAIN
+    DOMAIN --> SERVICES
+    SERVICES --> API
+    API --> CLIENT
+```
 
 ---
 
@@ -435,23 +543,23 @@ Possíveis áreas de evolução incluem:
 
 O projeto busca demonstrar, na prática, alguns conceitos importantes de desenvolvimento backend:
 
-**Desacoplamento**
+### Desacoplamento
 
 > Regras de negócio não devem depender diretamente de banco de dados ou frameworks de infraestrutura.
 
-**Separação de responsabilidades**
+### Separação de responsabilidades
 
 > Cada camada possui uma responsabilidade específica e bem definida.
 
-**Inversão de dependências**
+### Inversão de dependências
 
 > Implementações concretas são conectadas através de abstrações e Dependency Injection.
 
-**Evolução da API**
+### Evolução da API
 
 > Versionamento permite que novos contratos sejam introduzidos sem necessariamente quebrar consumidores existentes.
 
-**Tratamento estruturado de resultados**
+### Tratamento estruturado de resultados
 
 > O padrão `Result` fornece uma maneira consistente de representar operações bem-sucedidas e falhas esperadas.
 
@@ -468,3 +576,6 @@ O repositório representa a base backend do CondoHub e continua sendo expandido 
 ## 📄 Licença
 
 Este projeto está em desenvolvimento para fins de estudo, experimentação arquitetural e evolução da solução.
+
+```
+```
