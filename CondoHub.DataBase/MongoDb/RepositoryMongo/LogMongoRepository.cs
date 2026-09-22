@@ -1,6 +1,7 @@
 using CondoHub.DataBase.MongoDb.Context;
-using CondoHub.Domain.Entity.Log;
 using CondoHub.Domain.Interfaces.Repositorys;
+using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.IdentityModel.Abstractions;
 
 namespace CondoHub.DataBase.MongoDb.RepositoryMongo;
 

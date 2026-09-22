@@ -1,4 +1,5 @@
-using CondoHub.Domain.Entity.Log;
+// using CondoHub.Domain.Entity.Log;
+using Microsoft.IdentityModel.Abstractions;
 
 namespace CondoHub.Domain.Interfaces.Repositorys;
 

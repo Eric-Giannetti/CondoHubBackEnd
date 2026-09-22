@@ -1,7 +1,7 @@
-using CondoHub.Domain.Entity.Log;
 using CondoHub.Domain.Interfaces.Repositorys;
 using CondoHub.Domain.Interfaces.Services;
 using CondoHub.Domain.Util;
+using Microsoft.IdentityModel.Abstractions;
 
 namespace CondoHub.Services.Services;
 
@@ -18,7 +18,7 @@ public class LogService : ILogService
     {
         try
         {
-            _logRepository.AddLog(new LogEntry { Message = message, ErrorType = errorType });
+            _logRepository.AddLog(new LogEntry { Message = message });
         }
         catch
         {

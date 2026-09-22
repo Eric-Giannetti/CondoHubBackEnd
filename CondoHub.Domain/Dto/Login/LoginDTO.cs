@@ -7,7 +7,7 @@ public class LoginDTO
     public long UserId { get; set; }
     public List<TypeUserEnum>? TypeUser { get; set; }
     public string Token { get; set; }
-    public bool FirstAccess { get; set; }
+    public bool FirstAccess { get; set; } = false;
 
     public bool ValidLogin()
     {

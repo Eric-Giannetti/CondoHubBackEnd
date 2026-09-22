@@ -9,8 +9,8 @@ namespace CondoHub.DataBase.MongoDb.Context
 
         public MongoDbContext(IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("MongoDbConnectionString");
-            var databaseName = configuration.GetValue<string>("MongoDbDatabaseName");
+            var connectionString = configuration.GetValue<string>("MongoDbSettings:ConnectionString");
+            var databaseName = configuration.GetValue<string>("MongoDbSettings:DatabaseName");
             var client = new MongoClient(connectionString);
             _database = client.GetDatabase(databaseName);
         }

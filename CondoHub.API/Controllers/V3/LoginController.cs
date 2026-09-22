@@ -43,8 +43,7 @@ public class LoginController : Controller
         var user = new LoginDTO
         {
             UserId = userId,
-            TypeUser = new List<TypeUserEnum> { loginDto },
-            FirstAccess = false
+            TypeUser = new List<TypeUserEnum> { loginDto }
         };
 
         var result = _loginService.RefreshToken(user);
