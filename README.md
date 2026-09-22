@@ -1,142 +1,470 @@
-# CondoHub
+# 🏢 CondoHub
 
-## Arquitetura, Design Patterns e SOLID
+**CondoHub** é uma plataforma ERP para **gestão condominial**, desenvolvida com foco em organização, escalabilidade, segurança e separação de responsabilidades.
 
-O projeto segue Clean Architecture, separado em `CondoHub.Domain` (entidades/contratos), `CondoHub.DataBase` (persistência), `CondoHub.Services` (regras de negócio), `CondoHub.Security` (helpers de segurança) e `CondoHub.API` (apresentação/HTTP).
-
-### Design Patterns aplicados
-- **Repository Pattern** — acesso a dados (MongoDB/MySQL) isolado atrás de interfaces em `CondoHub.Domain/Interfaces/Repositorys` (ex.: `ICondominiumMongoRepository`, `ILogRepository`).
-- **Factory Method** — `Result<T>.Success()/Failure()`, `ResultList<T>.Success()/Failure()` e `DbConnectionFactory` encapsulam a criação de resultados e conexões.
-- **Dependency Injection** — cadastro de dependências centralizado em `ConnectionsConfiguration` e `UseCasesConfiguration`.
-- **Middleware Pipeline** — `UserContextMiddleware` intercepta a requisição e popula `IUserContextService`.
-- **Decorator/Filter (Action Filter)** — `IsAdminAttribute`, `IsUserAttribute`, `IsCondominiumManagerAttribute` para checagem de autorização.
-- **Context Object** — `IUserContextService`/`UserContextService` guarda dados do usuário autenticado durante a requisição.
-- **Result/Either Pattern** — `Result`, `Result<T>`, `ResultList<T>` substituem exceptions para fluxo de erro esperado, com `ResultLogger` plugado por DI para logging transversal.
-- **API Versioning** — pastas `Controllers/V1`, `V2`, `V3` permitem múltiplas versões de endpoints coexistirem.
-
-### Princípios SOLID
-- **SRP** — camadas e classes com responsabilidade única (cada repositório cuida de uma fonte de dados, cada atributo cuida de uma regra de autorização).
-- **OCP** — novas versões de API e novos tipos de erro podem ser adicionados sem alterar código existente.
-- **LSP** — implementações de interfaces (`ICondominiumMongoRepository`, `ILogRepository`, `ILogService`) são substituíveis sem quebrar consumidores.
-- **ISP** — interfaces pequenas e focadas por responsabilidade, evitando interfaces "gordas".
-- **DIP** — camadas de negócio dependem de abstrações definidas no `Domain`, nunca de implementações concretas; a composição concreta acontece só na `API`.
-
-## Visão geral
-
-O CondoHub é um sistema de ERP voltado para a administração de condomínios, desenvolvido para centralizar e automatizar os processos administrativos, financeiros e operacionais de empreendimentos residenciais e comerciais.
-
-A solução foi pensada para auxiliar síndicos, administradoras e funcionários na gestão de condomínios, permitindo o controle de moradores, unidades, ocorrências, pagamentos, reservas, documentos e outras rotinas do dia a dia.
-
-## Objetivo do projeto
-
-O objetivo principal do CondoHub é oferecer uma plataforma robusta e organizada para que a gestão condominial seja feita de forma mais eficiente, segura e transparente. O sistema busca reduzir a dependência de processos manuais, melhorar a comunicação entre colaboradores e moradores e facilitar a tomada de decisão por meio de dados e informações centralizadas.
-
-## Problema resolvido
-
-Administrar um condomínio envolve diversas atividades simultâneas, como:
-
-- controle de moradores e unidades;
-- gestão de ocorrências e solicitações;
-- acompanhamento de pagamentos e cobranças;
-- organização de reservas e áreas comuns;
-- manutenção e chamados de serviços;
-- comunicação e documentação interna.
-
-Sem um sistema integrado, essas atividades tendem a ficar dispersas em planilhas, mensagens e processos manuais, gerando retrabalho, erros e falta de visibilidade.
-
-## Funcionalidades esperadas
-
-O ERP do CondoHub pode evoluir para cobrir os principais módulos de uma administradora de condomínio, incluindo:
-
-### Gestão de moradores e unidades
-- cadastro de moradores;
-- vínculo com unidades e vagas;
-- controle de dependentes e moradores autorizados;
-- histórico de mudanças na unidade.
-
-### Administração financeira
-- controle de boletos e pagamentos;
-- geração de vouchers e extratos;
-- registro de despesas do condomínio;
-- acompanhamento da situação financeira por unidade.
-
-### Ocorrências e chamados
-- abertura de chamados por moradores;
-- acompanhamento de status e pendências;
-- histórico de atendimento.
-
-### Reservas e áreas comuns
-- agendamento de salão de festas, churrasqueira e outros espaços;
-- controle de disponibilidade;
-- gestão de regras e notificações.
-
-### Documentação e compliance
-- arquivos e documentos administrativos;
-- armazenamento de contratos e atas;
-- organização de registros do condomínio.
-
-### Comunicação e portal do morador
-- envio de avisos e comunicados;
-- notificações internas;
-- acesso a informações relevantes por perfil de usuário.
-
-## Arquitetura do sistema
-
-O projeto foi estruturado em camadas, seguindo uma abordagem moderna para APIs e aplicações empresariais.
-
-### Camadas principais
-
-- CondoHub.API: responsável pela exposição dos endpoints da aplicação e integração com o cliente.
-- CondoHub.Domain: contém as entidades, regras de negócio e contratos principais do domínio.
-- CondoHub.DataBase: camada de acesso a dados e persistência.
-- CondoHub.Services: serviços e regras de aplicação.
-- CondoHub.Security: funcionalidades relacionadas à autenticação, autorização e segurança.
-- CondoHub.Tests: testes automatizados para garantir a qualidade e estabilidade do sistema.
-
-## Stack tecnológica
-
-O backend do projeto está baseado em tecnologias .NET, com foco em APIs REST. A estrutura atual sugere uso de:
-
-- ASP.NET Core
-- C#
-- Entity Framework / acesso a banco relacionais ou NoSQL conforme a implementação
-- autenticação e autorização via JWT
-- Swagger/OpenAPI para documentação de endpoints
-- arquitetura em camadas e modularização por responsabilidade
-
-## Fluxo de uso
-
-O sistema é pensado para servir diferentes perfis de usuários, como:
-
-- síndico;
-- administradora;
-- porteiro ou atendimento;
-- morador;
-- financeiro;
-- manutenção.
-
-Cada perfil pode ter acesso a funcionalidades específicas de acordo com permissões e regras de negócio.
-
-## Benefícios esperados
-
-Ao centralizar a administração condominial em uma plataforma ERP, o condomínio passa a contar com:
-
-- maior eficiência operacional;
-- redução de erros manuais;
-- melhor rastreabilidade de processos;
-- maior transparência financeira;
-- melhor comunicação com moradores;
-- melhor organização de documentos e pendências;
-- suporte à tomada de decisão por dados.
-
-## Estado atual
-
-Este repositório representa a base backend do sistema CondoHub, com a estrutura inicial para uma solução de ERP de administração de condomínios. O projeto está em evolução e pode receber novos módulos e integrações conforme as demandas de negócio.
-
-## Conclusão
-
-O CondoHub é um projeto de ERP para gestão de condomínios, com foco em digitalizar e automatizar a administração do patrimônio e das relações entre condomínio, moradores e prestadores de serviços. A proposta é criar uma solução completa, escalável e organizada para atender as necessidades reais de administradoras e síndicos.
+O projeto foi estruturado seguindo princípios de **Clean Architecture, SOLID, Design Patterns e Dependency Injection**, buscando manter o domínio desacoplado de detalhes de infraestrutura e facilitar a evolução da aplicação.
 
 ---
 
-Este README foi criado para apresentar a visão geral do projeto e sua finalidade dentro do contexto de gestão condominial.
+## 📋 Sobre o projeto
+
+Administrar um condomínio envolve diferentes processos administrativos, financeiros e operacionais que frequentemente acabam distribuídos entre planilhas, sistemas isolados e processos manuais.
+
+O CondoHub propõe centralizar essas operações em uma única plataforma, permitindo que diferentes perfis de usuários — como **síndicos, administradoras, moradores e funcionários** — tenham acesso às funcionalidades correspondentes às suas responsabilidades.
+
+A aplicação foi projetada como uma **API REST**, servindo como backend para futuras aplicações web, mobile ou outros consumidores.
+
+---
+
+## 🎯 Objetivos
+
+O projeto tem como principais objetivos:
+
+* Centralizar informações do condomínio;
+* Automatizar processos administrativos;
+* Reduzir processos manuais e retrabalho;
+* Garantir controle de acesso baseado em perfil;
+* Facilitar a manutenção e evolução do código;
+* Permitir integração com diferentes fontes de dados;
+* Manter as regras de negócio independentes da infraestrutura.
+
+---
+
+# 🏗️ Arquitetura
+
+O CondoHub utiliza uma arquitetura baseada em **separação de responsabilidades**, organizada em projetos independentes:
+
+```text
+CondoHub
+│
+├── CondoHub.API
+│   └── Controllers, Middlewares, Filters, HTTP
+│
+├── CondoHub.Domain
+│   └── Entities, Interfaces, Contracts, Results
+│
+├── CondoHub.Services
+│   └── Application Services e regras de negócio
+│
+├── CondoHub.DataBase
+│   └── Repositories, Connections e persistência
+│
+├── CondoHub.Security
+│   └── Autenticação, autorização e recursos de segurança
+│
+└── CondoHub.Tests
+    └── Testes automatizados
+```
+
+### Responsabilidade de cada camada
+
+| Projeto               | Responsabilidade                                              |
+| --------------------- | ------------------------------------------------------------- |
+| **CondoHub.Domain**   | Entidades, contratos, interfaces e abstrações do domínio      |
+| **CondoHub.Services** | Regras de negócio e serviços da aplicação                     |
+| **CondoHub.DataBase** | Persistência e acesso às fontes de dados                      |
+| **CondoHub.Security** | Autenticação, autorização e recursos relacionados à segurança |
+| **CondoHub.API**      | Exposição dos endpoints REST e integração entre as camadas    |
+| **CondoHub.Tests**    | Testes automatizados                                          |
+
+Uma das principais decisões arquiteturais é manter as camadas de negócio dependentes de **abstrações**, evitando acoplamento direto com implementações de infraestrutura.
+
+---
+
+# 🧩 Design Patterns
+
+O projeto utiliza diferentes padrões de projeto para resolver problemas recorrentes de arquitetura e organização de código.
+
+### Repository Pattern
+
+O acesso aos dados é abstraído por interfaces definidas no domínio.
+
+Exemplos:
+
+```text
+ICondominiumMongoRepository
+ILogRepository
+```
+
+Isso permite que a camada de negócio trabalhe com contratos em vez de depender diretamente da implementação do banco de dados.
+
+---
+
+### Factory Method
+
+Utilizado para encapsular a criação de determinados objetos e resultados.
+
+Exemplos:
+
+```csharp
+Result<T>.Success()
+Result<T>.Failure()
+
+ResultList<T>.Success()
+ResultList<T>.Failure()
+```
+
+Também é utilizado na criação de conexões através da:
+
+```text
+DbConnectionFactory
+```
+
+---
+
+### Dependency Injection
+
+As dependências da aplicação são registradas e centralizadas através das configurações:
+
+```text
+ConnectionsConfiguration
+UseCasesConfiguration
+```
+
+Isso facilita:
+
+* substituição de implementações;
+* testes automatizados;
+* manutenção;
+* redução de acoplamento.
+
+---
+
+### Middleware Pipeline
+
+O `UserContextMiddleware` participa do pipeline HTTP para processar informações relacionadas ao usuário autenticado e disponibilizá-las através do:
+
+```text
+IUserContextService
+```
+
+---
+
+### Action Filters / Authorization
+
+A autorização baseada em perfil é encapsulada em atributos específicos:
+
+```text
+IsAdminAttribute
+IsUserAttribute
+IsCondominiumManagerAttribute
+```
+
+Dessa forma, regras de autorização podem ser aplicadas diretamente aos endpoints sem duplicar a lógica de validação.
+
+---
+
+### Context Object
+
+O contexto do usuário autenticado durante uma requisição é centralizado através de:
+
+```text
+IUserContextService
+UserContextService
+```
+
+Isso evita que informações relacionadas ao usuário precisem ser propagadas manualmente entre diferentes componentes.
+
+---
+
+### Result Pattern
+
+O projeto utiliza `Result` como uma forma estruturada de representar sucesso e falha em operações esperadas.
+
+Principais abstrações:
+
+```text
+Result
+Result<T>
+ResultList<T>
+```
+
+Além disso, o `ResultLogger` permite integrar o tratamento de resultados ao sistema de logging através de Dependency Injection.
+
+---
+
+### API Versioning
+
+Os endpoints são organizados por versão:
+
+```text
+Controllers/
+├── V1/
+├── V2/
+└── V3/
+```
+
+Isso permite evoluir contratos da API mantendo versões anteriores disponíveis quando necessário.
+
+---
+
+# 🧱 Princípios SOLID
+
+A arquitetura do CondoHub busca aplicar os cinco princípios SOLID.
+
+### S — Single Responsibility Principle
+
+Cada componente possui uma responsabilidade bem definida.
+
+Por exemplo:
+
+* Repositories → acesso a dados;
+* Services → regras de aplicação;
+* Filters → autorização;
+* Controllers → exposição HTTP.
+
+---
+
+### O — Open/Closed Principle
+
+A estrutura permite adicionar novas implementações e comportamentos sem modificar componentes existentes desnecessariamente.
+
+Um exemplo é a possibilidade de adicionar novas implementações de interfaces de repositório mantendo os consumidores desacoplados da implementação concreta.
+
+---
+
+### L — Liskov Substitution Principle
+
+As implementações concretas respeitam os contratos definidos pelas interfaces, permitindo que sejam substituídas sem alterar o comportamento esperado pelos consumidores.
+
+---
+
+### I — Interface Segregation Principle
+
+As interfaces são divididas de acordo com suas responsabilidades, evitando contratos excessivamente grandes e componentes dependentes de métodos que não utilizam.
+
+---
+
+### D — Dependency Inversion Principle
+
+As regras de negócio dependem de **abstrações**, e não de implementações concretas.
+
+```text
+Services
+   │
+   ▼
+Interfaces / Contracts
+   │
+   ▼
+Infrastructure
+```
+
+A composição das implementações concretas acontece na camada de entrada da aplicação.
+
+---
+
+# 🔐 Segurança
+
+A aplicação possui uma camada dedicada a recursos de segurança:
+
+```text
+CondoHub.Security
+```
+
+A autorização é organizada de acordo com o perfil e contexto do usuário, permitindo restringir funcionalidades específicas da aplicação.
+
+Entre os componentes utilizados estão:
+
+* autenticação;
+* autorização;
+* contexto do usuário;
+* filtros de autorização;
+* controle de acesso por perfil.
+
+---
+
+# 🗄️ Persistência
+
+O projeto utiliza abstrações de repositório para desacoplar as regras de negócio da tecnologia de persistência.
+
+A arquitetura permite trabalhar com diferentes fontes de dados, incluindo cenários envolvendo:
+
+* **MongoDB**
+* **MySQL**
+
+O objetivo dessa abordagem é evitar que decisões relacionadas à persistência contaminem as regras de negócio da aplicação.
+
+---
+
+# 👥 Perfis de usuário
+
+O sistema foi projetado para atender diferentes perfis dentro da gestão condominial:
+
+* 👔 Síndico
+* 🏢 Administradora
+* 🏠 Morador
+* 🛡️ Porteiro / Atendimento
+* 💰 Financeiro
+* 🔧 Manutenção
+
+Cada perfil pode possuir permissões e funcionalidades específicas de acordo com as regras de negócio da aplicação.
+
+---
+
+# 📦 Módulos
+
+A plataforma pode centralizar diferentes áreas da administração condominial, como:
+
+### 🏠 Moradores e unidades
+
+* Cadastro de moradores;
+* Associação entre moradores e unidades;
+* Controle de dependentes;
+* Vagas e informações da unidade;
+* Histórico cadastral.
+
+### 💰 Financeiro
+
+* Controle de pagamentos;
+* Boletos e cobranças;
+* Despesas;
+* Extratos;
+* Situação financeira das unidades.
+
+### 📋 Ocorrências e chamados
+
+* Abertura de ocorrências;
+* Registro de solicitações;
+* Controle de status;
+* Histórico de atendimento.
+
+### 🏊 Reservas
+
+* Reserva de áreas comuns;
+* Controle de disponibilidade;
+* Regras de utilização;
+* Histórico de reservas.
+
+### 📁 Documentos
+
+* Documentos administrativos;
+* Contratos;
+* Atas;
+* Registros internos.
+
+### 📢 Comunicação
+
+* Comunicados;
+* Avisos;
+* Notificações;
+* Informações direcionadas por perfil.
+
+---
+
+# 🛠️ Tecnologias
+
+Principais tecnologias e conceitos utilizados no projeto:
+
+* **C#**
+* **.NET / ASP.NET Core**
+* **REST API**
+* **MongoDB**
+* **MySQL**
+* **JWT**
+* **Swagger / OpenAPI**
+* **Dependency Injection**
+* **Clean Architecture**
+* **SOLID**
+* **Repository Pattern**
+* **API Versioning**
+* **Testes automatizados**
+
+---
+
+# 🔄 Fluxo da aplicação
+
+De forma simplificada, uma requisição percorre a aplicação seguindo o fluxo:
+
+```text
+Client
+  │
+  ▼
+API / Controller
+  │
+  ▼
+Middleware / Filters
+  │
+  ▼
+Services
+  │
+  ▼
+Domain Interfaces
+  │
+  ▼
+Repositories
+  │
+  ▼
+Database
+```
+
+Essa separação permite que cada camada tenha uma responsabilidade específica e reduz o acoplamento entre **HTTP, regras de negócio e infraestrutura**.
+
+---
+
+# 🧪 Testes
+
+O projeto possui uma camada dedicada a testes:
+
+```text
+CondoHub.Tests
+```
+
+Os testes têm como objetivo validar o comportamento dos componentes da aplicação e reduzir regressões durante a evolução do sistema.
+
+---
+
+# 📈 Evolução do projeto
+
+O CondoHub está em desenvolvimento contínuo.
+
+A arquitetura foi construída considerando a possibilidade de expansão para novos módulos, integrações e versões da API sem comprometer a organização das regras de negócio existentes.
+
+Possíveis áreas de evolução incluem:
+
+* novos módulos administrativos;
+* integrações com serviços externos;
+* notificações;
+* aplicações web e mobile;
+* relatórios e dashboards;
+* automações financeiras;
+* novos mecanismos de autenticação e autorização.
+
+---
+
+# 💡 Principais decisões arquiteturais
+
+O projeto busca demonstrar, na prática, alguns conceitos importantes de desenvolvimento backend:
+
+**Desacoplamento**
+
+> Regras de negócio não devem depender diretamente de banco de dados ou frameworks de infraestrutura.
+
+**Separação de responsabilidades**
+
+> Cada camada possui uma responsabilidade específica e bem definida.
+
+**Inversão de dependências**
+
+> Implementações concretas são conectadas através de abstrações e Dependency Injection.
+
+**Evolução da API**
+
+> Versionamento permite que novos contratos sejam introduzidos sem necessariamente quebrar consumidores existentes.
+
+**Tratamento estruturado de resultados**
+
+> O padrão `Result` fornece uma maneira consistente de representar operações bem-sucedidas e falhas esperadas.
+
+---
+
+# 🚀 Status
+
+**Em desenvolvimento 🚧**
+
+O repositório representa a base backend do CondoHub e continua sendo expandido conforme novos requisitos e módulos são implementados.
+
+---
+
+## 📄 Licença
+
+Este projeto está em desenvolvimento para fins de estudo, experimentação arquitetural e evolução da solução.
