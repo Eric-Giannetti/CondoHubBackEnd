@@ -8,15 +8,6 @@ using CondoHub.Domain.Interfaces.Services;
 
 namespace CondoHub.Domain.Util;
 
-/// <summary>Static hook allowing Result/ResultList Failure factories to persist a log entry without depending on infrastructure.</summary>
-public static class ResultLogger
-{
-    public static ILogService? Logger { get; set; }
-
-    public static void LogFailure(string errorMessage, TypeErrorLogEnum errorType) =>
-        Logger?.RegisterLog(errorMessage, errorType);
-}
-
 public class Result<T>
 {
     public T Value { get; set; }
@@ -99,6 +90,11 @@ public class Result
     public static Result Failure(string errorMessage)
     {
         ResultLogger.LogFailure(errorMessage, default);
+        return new Result { IsSuccess = false, Error = errorMessage };
+    }
+    public static Result Failure(string errorMessage, TypeErrorLogEnum errorType)
+    {
+        ResultLogger.LogFailure(errorMessage, errorType);
         return new Result { IsSuccess = false, Error = errorMessage };
     }
 }

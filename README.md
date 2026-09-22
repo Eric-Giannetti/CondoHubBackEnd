@@ -1,5 +1,26 @@
 # CondoHub
 
+## Arquitetura, Design Patterns e SOLID
+
+O projeto segue Clean Architecture, separado em `CondoHub.Domain` (entidades/contratos), `CondoHub.DataBase` (persistência), `CondoHub.Services` (regras de negócio), `CondoHub.Security` (helpers de segurança) e `CondoHub.API` (apresentação/HTTP).
+
+### Design Patterns aplicados
+- **Repository Pattern** — acesso a dados (MongoDB/MySQL) isolado atrás de interfaces em `CondoHub.Domain/Interfaces/Repositorys` (ex.: `ICondominiumMongoRepository`, `ILogRepository`).
+- **Factory Method** — `Result<T>.Success()/Failure()`, `ResultList<T>.Success()/Failure()` e `DbConnectionFactory` encapsulam a criação de resultados e conexões.
+- **Dependency Injection** — cadastro de dependências centralizado em `ConnectionsConfiguration` e `UseCasesConfiguration`.
+- **Middleware Pipeline** — `UserContextMiddleware` intercepta a requisição e popula `IUserContextService`.
+- **Decorator/Filter (Action Filter)** — `IsAdminAttribute`, `IsUserAttribute`, `IsCondominiumManagerAttribute` para checagem de autorização.
+- **Context Object** — `IUserContextService`/`UserContextService` guarda dados do usuário autenticado durante a requisição.
+- **Result/Either Pattern** — `Result`, `Result<T>`, `ResultList<T>` substituem exceptions para fluxo de erro esperado, com `ResultLogger` plugado por DI para logging transversal.
+- **API Versioning** — pastas `Controllers/V1`, `V2`, `V3` permitem múltiplas versões de endpoints coexistirem.
+
+### Princípios SOLID
+- **SRP** — camadas e classes com responsabilidade única (cada repositório cuida de uma fonte de dados, cada atributo cuida de uma regra de autorização).
+- **OCP** — novas versões de API e novos tipos de erro podem ser adicionados sem alterar código existente.
+- **LSP** — implementações de interfaces (`ICondominiumMongoRepository`, `ILogRepository`, `ILogService`) são substituíveis sem quebrar consumidores.
+- **ISP** — interfaces pequenas e focadas por responsabilidade, evitando interfaces "gordas".
+- **DIP** — camadas de negócio dependem de abstrações definidas no `Domain`, nunca de implementações concretas; a composição concreta acontece só na `API`.
+
 ## Visão geral
 
 O CondoHub é um sistema de ERP voltado para a administração de condomínios, desenvolvido para centralizar e automatizar os processos administrativos, financeiros e operacionais de empreendimentos residenciais e comerciais.
