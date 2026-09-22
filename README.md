@@ -59,7 +59,7 @@ flowchart TB
     TESTS --> DOMAIN
 ```
 
-### Responsabilidade de cada camada
+### Responsabilidade de cada camada 
 
 | Projeto               | Responsabilidade                                              |
 | --------------------- | ------------------------------------------------------------- |
