@@ -32,7 +32,7 @@ artifacts/
 appsettings.Development.json
 appsettings.Local.json
 appsettings.*.json
-!appsettings.json
+appsettings.json
 
 # Secrets / local configuration
 secrets.json
