@@ -1,5 +1,6 @@
 ﻿using CondoHub.Domain.Dto.Login;
 using CondoHub.Domain.Entity;
+using CondoHub.Domain.Enum;
 using CondoHub.Domain.Interfaces.Repositorys;
 using CondoHub.Domain.Interfaces.Services;
 using CondoHub.Domain.Services;
@@ -48,10 +49,12 @@ public class LoginService : ILoginService
         if(!permissionResult.IsSuccess) return Result<LoginDTO>.Failure(permissionResult.Error);
         
 
-        var token = SecurityHelper.GenerateJwtToken(_userContextService, _configuration);
         var typesUser = _userRepository.GetAutorizationTypesByUserId(user.Id);
+        if (typesUser.Count == 0)
+            return Result<LoginDTO>.Failure("User does not have an authorization profile.");
 
-        
+        SetUserContext(user.Id, typesUser[0]);
+        var token = SecurityHelper.GenerateJwtToken(_userContextService, _configuration);
         return Result<LoginDTO>.Success(new LoginDTO(user.Id, token, typesUser));
     }
 
@@ -60,12 +63,24 @@ public class LoginService : ILoginService
         var permissionResult = PermissionToLogin(user.UserId);
         if(!permissionResult.IsSuccess) return Result<LoginDTO>.Failure(permissionResult.Error);
         
-        if(!_userRepository.GetAutorizationTypesByUserId(user.UserId).Where(c => c == user.TypeUser.FirstOrDefault()).Any())
+        if (user.TypeUser == null || user.TypeUser.Count != 1)
+            return Result<LoginDTO>.Failure("Exactly one user type must be selected for token refresh.");
+
+        var userType = user.TypeUser[0];
+        if (!_userRepository.GetAutorizationTypesByUserId(user.UserId).Contains(userType))
             return Result<LoginDTO>.Failure("Invalid user type for token refresh.");
-        
+
+        SetUserContext(user.UserId, userType);
         var token = SecurityHelper.GenerateJwtToken(_userContextService, _configuration);
         
         return Result<LoginDTO>.Success(new LoginDTO(user.UserId, token, user.TypeUser));
+    }
+
+    private void SetUserContext(long userId, TypeUserEnum userType)
+    {
+        _userContextService.UserId = userId;
+        _userContextService.userEnum = userType;
+        _userContextService.IsAdmin = userType == TypeUserEnum.Admin;
     }
 
     private Result PermissionToLogin(User? user)

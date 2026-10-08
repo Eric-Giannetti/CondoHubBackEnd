@@ -1,4 +1,5 @@
 ﻿using CondoHub.DataBase.MongoDb.RepositoryMongo;
+using CondoHub.DataBase.MySql.Repository;
 using CondoHub.Domain.Interfaces.Repositorys;
 using CondoHub.Domain.Interfaces.Services;
 using CondoHub.Domain.Services;
@@ -31,6 +32,8 @@ public static class UseCasesConfiguration
         services.AddScoped<ICondominiumMongoRepository, CondominiumMongoRepository>();
         services.AddSingleton<ILogRepository, LogMongoRepository>();
         services.AddSingleton<ILogService, LogService>();
+        services.AddScoped<ITicketRepository, TicketRepository>();
+        services.AddScoped<ITicketService, TicketService>();
         #endregion
 
         return services;

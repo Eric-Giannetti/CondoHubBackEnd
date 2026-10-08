@@ -14,4 +14,7 @@ public static class ResultLogger
 
     public static void LogFailure(string errorMessage, TypeErrorLogEnum errorType) =>
         Logger?.RegisterLog(errorMessage, errorType);
+
+    public static void LogFailureApi(string errorMessage, TypeErrorLogEnum errorType, int statusCode) =>
+        Logger?.RegisterLog($"{errorMessage} | StatusCode: {statusCode}", errorType);
 }
