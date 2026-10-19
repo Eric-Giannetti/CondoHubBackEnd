@@ -5,5 +5,6 @@ public enum TypeErrorLogEnum
         Validacao,
         Seguranca,
         InfraestruturaDatabase,
-        Negocio
+        Negocio,
+        Permissao
 }

@@ -46,7 +46,7 @@ public class LoginService : ILoginService
         
 
         var permissionResult = PermissionToLogin(user);
-        if(!permissionResult.IsSuccess) return Result<LoginDTO>.Failure(permissionResult.Error);
+        if(!permissionResult.IsSuccess) return Result<LoginDTO>.Failure(permissionResult.Error?.Message ?? string.Empty, TypeErrorLogEnum.Permissao);
         
 
         var typesUser = _userRepository.GetAutorizationTypesByUserId(user.Id);
@@ -61,7 +61,7 @@ public class LoginService : ILoginService
     public Result<LoginDTO> RefreshToken(LoginDTO user)
     {
         var permissionResult = PermissionToLogin(user.UserId);
-        if(!permissionResult.IsSuccess) return Result<LoginDTO>.Failure(permissionResult.Error);
+        if(!permissionResult.IsSuccess) return Result<LoginDTO>.Failure(permissionResult.Error?.Message ?? string.Empty, TypeErrorLogEnum.Permissao);
         
         if (user.TypeUser == null || user.TypeUser.Count != 1)
             return Result<LoginDTO>.Failure("Exactly one user type must be selected for token refresh.");
